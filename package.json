@@ -1,0 +1,13 @@
+{
+    "name": "fraud-detection-system",
+    "version": "1.0.0",
+    "scripts": {
+        "infra": "docker-compose up -d",
+        "producer": "cd transaction-producer && ./mvnw spring-boot:run",
+        "service": "cd transaction-service && ./mvnw spring-boot:run",
+        "start": "npx concurrently \"npm run producer\" \"npm run service\""
+    },
+    "devDependencies": {
+        "concurrently": "^8.2.2"
+    }
+}
